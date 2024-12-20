@@ -1,0 +1,121 @@
+
+const Form = () => {
+  return (
+    <div className="min-h-screen w-screen bg-slate-300 box-border p-5">
+      <h1 className="text-2xl text-purple-800 font-bold tracking-wide">Add New Student</h1>
+      <div className="formMainContainer h-full w-full mt-4  bg-slate-200 rounded-xl overflow-hidden">
+        <h2 className="block text-white bg-purple-800 p-3 font-semibold text-xl">Personal Details</h2>
+          <form action="">
+            {/* form here form content start */}
+           <div className="formCont grid md:grid-cols-2 grid-cols-1 gap-9 p-5 ">
+            {/* child one */}
+            <div className="div1 space-y-4">
+            <div>
+               <label className="block text-purple-900 font-semibold mb-2">First Name </label>
+               <input
+                type="text"
+                className="w-full p-2 border border-gray-300 rounded-md outline-none"
+                placeholder="John"
+                required
+                />
+            </div>
+
+
+
+          <div>
+              <label className="block text-purple-900 font-semibold mb-2">Last Name </label>
+              <input
+              type="text"
+              className="w-full p-2 border border-gray-300 rounded-md outline-none"
+              placeholder="Doe"
+              required
+            />
+          </div>
+
+
+
+           <div>
+              <label className="block text-purple-900 font-semibold mb-2">Email </label>
+              <input
+              type="email"
+              className="w-full p-2 border border-gray-300 rounded-md outline-none"
+              placeholder="JohnDoe@gmail.com"
+              required
+            />
+          </div>
+
+
+
+        <div className="mb-4">
+            <label className="block text-purple-900 font-semibold mb-2">Address </label>
+            <textarea
+            className="w-full p-2 border border-gray-300 rounded-md outline-none"
+            rows="3"
+            placeholder="Enter your address"
+            required
+           ></textarea>
+        </div>
+
+
+         </div>
+{/* child one end*/}
+
+            {/* child two */}
+      <div className="div2 space-y-4">
+
+          
+          <div>
+              <label className="block text-purple-900 font-semibold mb-2">Phone </label>
+              <input
+              type="tel"
+              className="w-full p-2 border border-gray-300 rounded-md outline-none"
+              placeholder="+1234567890"
+              required
+              />
+          </div>
+
+
+
+          <div>
+              <label className="block text-purple-900 font-semibold  mb-2">Date of Birth </label>
+              <input
+              type="text"
+              className="w-full p-2 border border-gray-300 rounded-md outline-none"
+              placeholder="01 January 2000"
+              required
+              />
+          </div>
+
+
+
+          <div>
+            <label className="block text-purple-900 font-semibold mb-2">Place of Birth </label>
+              <input
+              type="text"
+              className="w-full p-2 border border-gray-300 rounded-md outline-none"
+              placeholder="Nagpur"
+              required
+            />
+          </div>
+
+
+
+          <div className="mb-4">
+              <label className="block text-purple-900 font-semibold mb-2">Photo *</label>
+              <input type="file" placeholder="JPG"
+              required className="border-dashed border-2 h-24  border-gray-400 p-4 text-center text-gray-600 dark:text-gray-400">
+              {/* Drag and drop or click here to select a file */}
+              </input>
+           </div>
+
+
+            </div>
+             {/* child two end*/}
+         </div>
+          </form>
+      </div>
+    </div>
+  )
+}
+
+export default Form

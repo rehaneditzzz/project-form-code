@@ -1,0 +1,64 @@
+import { useState } from "react";
+
+const Programme = () => {
+
+    const [isModalOpen, setIsModalOpen] = useState(false);  // State to track modal visibility
+
+    // Function to handle button click and open modal
+    const handleButtonClick = () => {
+      setIsModalOpen(true);
+    };
+  
+    // Function to close modal
+    const closeModal = () => {
+      setIsModalOpen(false);
+    };
+  
+    // Function to close modal if clicked outside
+    const handleOverlayClick = (e) => {
+      if (e.target === e.currentTarget) {
+        closeModal();
+      }
+    };
+
+
+  return (
+    // <button className="px-8 py-2  bg-orange-600 rounded-tr-xl rounded-bl-xl text-white">
+         
+    //     </button>
+
+<div className="flex  justify-center items-center">
+      <button 
+        onClick={handleButtonClick} 
+        className="px-6 py-3 bg-orange-600 text-white rounded-lg hover:bg-blue-700 rounded-tr-xl rounded-bl-xl"
+      >
+         Programe ^
+      </button>
+
+      {isModalOpen && (
+        <div
+          className="fixed inset-20 bg-gray-500 bg-opacity-50 h-96 flex justify-center items-center z-50"
+          onClick={handleOverlayClick}
+        >
+          <div
+            className="bg-white p-8 rounded-lg shadow-lg w-96"
+            onClick={(e) => e.stopPropagation()} // Prevent modal close when clicking inside the modal
+          >
+            <h2 className="text-xl font-bold mb-4">Modal Title</h2>
+            <p>This is a simple modal example styled with Tailwind CSS.</p>
+            <button
+              onClick={closeModal}
+              className="mt-4 px-6 py-2 bg-red-600 text-white rounded-lg hover:bg-red-700"
+            >
+              Close
+            </button>
+          </div>
+        </div>
+      )}
+    </div>
+
+
+  )
+}
+
+export default Programme
